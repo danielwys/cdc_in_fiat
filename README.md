@@ -11,4 +11,4 @@ Other currencies/derivatives to be added soon:
 2. CRO -> SGD
 
 ## Screenshots
-<img src="./screenshots/screenshot.png" height="600">
+<img src="./screenshots/screenshot.png" height="450">
