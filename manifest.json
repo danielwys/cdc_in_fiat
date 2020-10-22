@@ -1,0 +1,22 @@
+{
+    "name": "Crypto.com Cards, in USD Price",
+    "short_name": "Crypto.com USD Card Prices",
+    "version": "1.0",
+    "description": "See the price of Crypto.com cards in USD!",
+    "author": "dawo",
+    "manifest_version": 2,
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["https://crypto.com/en/cards.html"],
+            "all_frames": true,
+            "js": ["contentScript.js"],
+            "run_at": "document_end"
+        }
+    ]
+  }
