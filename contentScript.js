@@ -23,19 +23,12 @@ function modifyPrice(croPriceObj) {
     let croPrice = parsePrice(croPriceObj);
     
     for (item in elements) {
-        switch (elements[item].innerHTML) {
-            case "1,000,000 CRO":
-                elements[item].innerHTML = (1000000 * croPrice).toFixed(2) + " USD"
-                break;
-            case "100,000 CRO":
-                elements[item].innerHTML = (100000 * croPrice).toFixed(2) + " USD"
-                break;
-            case "10,000 CRO":
-                elements[item].innerHTML = (10000 * croPrice).toFixed(2) + " USD"
-                break;
-            case "1,000 CRO":
-                elements[item].innerHTML = (1000 * croPrice).toFixed(2) + " USD"
-                break;
+        let html = elements[item].innerHTML;
+        let price = parseInt(html.split(" ")[0].replace(/,/g,""));
+        let unit = html.split(" ")[1];
+
+        if (unit && unit == "CRO") {
+            elements[item].innerHTML = (price * croPrice).toFixed(2) + " USD";
         }
 
     }
